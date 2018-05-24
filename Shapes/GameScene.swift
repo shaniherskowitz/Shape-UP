@@ -159,7 +159,8 @@ class GameScene: SKScene {
       scene = highScoreScene(fileNamed: "highScoreScene")
       
     } else {
-      scene = MenuScene(fileNamed: "MenuScene")
+      scene = LoserScene(fileNamed: "LoserScene")
+      
     }
     let transition:SKTransition = SKTransition.fade(withDuration: 1)
     
@@ -169,9 +170,12 @@ class GameScene: SKScene {
     self.view?.ignoresSiblingOrder = true
     scene?.scaleMode = .aspectFill
     let s = scene?.childNode(withName: "score") as? SKLabelNode
+    let myS = scene?.childNode(withName: "myscore") as? SKLabelNode
     
     s?.text = String(highScore)
     s?.fontName = "Chalkboard SE"
+    myS?.text = String(score)
+    myS?.fontName = "Chalkboard SE"
     
     self.view?.presentScene(scene)
     
@@ -191,7 +195,7 @@ extension GameScene: SKPhysicsContactDelegate {
     
     if let nodeA = contact.bodyA.node as? SKShapeNode, let nodeB = contact.bodyB.node as? SKShapeNode {
       if nodeA.fillColor != nodeB.fillColor {
-        //dieAndRestart()
+        dieAndRestart()
       }
     }
     if let nodeA2 = contact.bodyA.node as? SKShapeNode, let nodeB2 = contact.bodyB.node {

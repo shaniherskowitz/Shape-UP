@@ -20,6 +20,8 @@
 		F3C4137B20B6EC05003BE00B /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4137A20B6EC05003BE00B /* CreditsScene.swift */; };
 		F3C4137F20B70FEB003BE00B /* highScoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3C4137E20B70FEB003BE00B /* highScoreScene.sks */; };
 		F3C4138120B716A3003BE00B /* highScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4138020B716A3003BE00B /* highScoreScene.swift */; };
+		F3C4138320B71B96003BE00B /* LoserScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4138220B71B96003BE00B /* LoserScene.swift */; };
+		F3C4138720B71BF4003BE00B /* LoserScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3C4138620B71BF4003BE00B /* LoserScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		F3C4137A20B6EC05003BE00B /* CreditsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
 		F3C4137E20B70FEB003BE00B /* highScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = highScoreScene.sks; sourceTree = "<group>"; };
 		F3C4138020B716A3003BE00B /* highScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highScoreScene.swift; sourceTree = "<group>"; };
+		F3C4138220B71B96003BE00B /* LoserScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoserScene.swift; sourceTree = "<group>"; };
+		F3C4138620B71BF4003BE00B /* LoserScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LoserScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,14 +77,16 @@
 		D368513F1DEE87A900F407C5 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				F3C4137820B6EAF0003BE00B /* CreditsScene.sks */,
+				F3C4137620B5DE95003BE00B /* MenuScene.sks */,
+				F3C4137E20B70FEB003BE00B /* highScoreScene.sks */,
+				F3C4138620B71BF4003BE00B /* LoserScene.sks */,
 				D36851401DEE87A900F407C5 /* AppDelegate.swift */,
 				D36851461DEE87A900F407C5 /* GameScene.swift */,
 				F3C4137420B5D7C7003BE00B /* MenuScene.swift */,
-				F3C4137E20B70FEB003BE00B /* highScoreScene.sks */,
 				F3C4138020B716A3003BE00B /* highScoreScene.swift */,
+				F3C4138220B71B96003BE00B /* LoserScene.swift */,
 				F3C4137A20B6EC05003BE00B /* CreditsScene.swift */,
-				F3C4137820B6EAF0003BE00B /* CreditsScene.sks */,
-				F3C4137620B5DE95003BE00B /* MenuScene.sks */,
 				F3C4136920B55C31003BE00B /* Obstacles.swift */,
 				D36851481DEE87A900F407C5 /* GameViewController.swift */,
 				D368514A1DEE87A900F407C5 /* Main.storyboard */,
@@ -157,6 +163,7 @@
 				D368514C1DEE87A900F407C5 /* Main.storyboard in Resources */,
 				D368514E1DEE87A900F407C5 /* Assets.xcassets in Resources */,
 				D36851511DEE87A900F407C5 /* LaunchScreen.storyboard in Resources */,
+				F3C4138720B71BF4003BE00B /* LoserScene.sks in Resources */,
 				F3C4137920B6EAF0003BE00B /* CreditsScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +181,7 @@
 				D36851411DEE87A900F407C5 /* AppDelegate.swift in Sources */,
 				F3C4138120B716A3003BE00B /* highScoreScene.swift in Sources */,
 				F3C4137520B5D7C7003BE00B /* MenuScene.swift in Sources */,
+				F3C4138320B71B96003BE00B /* LoserScene.swift in Sources */,
 				F3C4137B20B6EC05003BE00B /* CreditsScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
