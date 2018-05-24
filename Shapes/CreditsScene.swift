@@ -27,7 +27,7 @@ class CreditsScene: SKScene {
       if node == backButton {
         if view != nil {
           let transition:SKTransition = SKTransition.fade(withDuration: 1)
-          let scene:SKScene = EndScene(fileNamed: "EndScene")!
+          let scene:SKScene = MenuScene(fileNamed: "MenuScene")!
           scene.scaleMode = .aspectFill
           self.view?.presentScene(scene)
           

@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class EndScene: SKScene {
+class MenuScene: SKScene {
   
   var playButton: SKSpriteNode?
   var score: SKLabelNode?

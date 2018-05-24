@@ -150,27 +150,32 @@ class GameScene: SKScene {
       node.removeFromParent()
     }
     addObstacles?.obstacles.removeAll()
-    
+    var scene:SKScene?
 //    setupPlayerAndObstacles()
 //    score = 0
 //    scoreLabel.text = String(score)
+    if( score > highScore) {
+      highScore = score
+      scene = highScoreScene(fileNamed: "highScoreScene")
+      
+    } else {
+      scene = MenuScene(fileNamed: "MenuScene")
+    }
     let transition:SKTransition = SKTransition.fade(withDuration: 1)
-    let scene:SKScene = EndScene(fileNamed: "EndScene")!
+    
     
     self.view?.showsFPS = false
     self.view?.showsNodeCount = false
     self.view?.ignoresSiblingOrder = true
-    scene.scaleMode = .aspectFill
-    let s = scene.childNode(withName: "score") as? SKLabelNode
-    if( score > highScore) {
-      highScore = score
-    }
+    scene?.scaleMode = .aspectFill
+    let s = scene?.childNode(withName: "score") as? SKLabelNode
+    
     s?.text = String(highScore)
     s?.fontName = "Chalkboard SE"
     
     self.view?.presentScene(scene)
     
-    self.view?.presentScene(scene, transition: transition)
+    self.view?.presentScene(scene!, transition: transition)
 
   }
   
@@ -186,7 +191,7 @@ extension GameScene: SKPhysicsContactDelegate {
     
     if let nodeA = contact.bodyA.node as? SKShapeNode, let nodeB = contact.bodyB.node as? SKShapeNode {
       if nodeA.fillColor != nodeB.fillColor {
-        dieAndRestart()
+        //dieAndRestart()
       }
     }
     if let nodeA2 = contact.bodyA.node as? SKShapeNode, let nodeB2 = contact.bodyB.node {
