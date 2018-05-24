@@ -16,6 +16,8 @@
 		F3C4136A20B55C31003BE00B /* Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4136920B55C31003BE00B /* Obstacles.swift */; };
 		F3C4137520B5D7C7003BE00B /* EndScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4137420B5D7C7003BE00B /* EndScene.swift */; };
 		F3C4137720B5DE95003BE00B /* EndScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3C4137620B5DE95003BE00B /* EndScene.sks */; };
+		F3C4137920B6EAF0003BE00B /* CreditsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F3C4137820B6EAF0003BE00B /* CreditsScene.sks */; };
+		F3C4137B20B6EC05003BE00B /* CreditsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4137A20B6EC05003BE00B /* CreditsScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F3C4136920B55C31003BE00B /* Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacles.swift; sourceTree = "<group>"; };
 		F3C4137420B5D7C7003BE00B /* EndScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScene.swift; sourceTree = "<group>"; };
 		F3C4137620B5DE95003BE00B /* EndScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndScene.sks; sourceTree = "<group>"; };
+		F3C4137820B6EAF0003BE00B /* CreditsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditsScene.sks; sourceTree = "<group>"; };
+		F3C4137A20B6EC05003BE00B /* CreditsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				D36851401DEE87A900F407C5 /* AppDelegate.swift */,
 				D36851461DEE87A900F407C5 /* GameScene.swift */,
 				F3C4137420B5D7C7003BE00B /* EndScene.swift */,
+				F3C4137A20B6EC05003BE00B /* CreditsScene.swift */,
+				F3C4137820B6EAF0003BE00B /* CreditsScene.sks */,
 				F3C4137620B5DE95003BE00B /* EndScene.sks */,
 				F3C4136920B55C31003BE00B /* Obstacles.swift */,
 				D36851481DEE87A900F407C5 /* GameViewController.swift */,
@@ -144,6 +150,7 @@
 				D368514C1DEE87A900F407C5 /* Main.storyboard in Resources */,
 				D368514E1DEE87A900F407C5 /* Assets.xcassets in Resources */,
 				D36851511DEE87A900F407C5 /* LaunchScreen.storyboard in Resources */,
+				F3C4137920B6EAF0003BE00B /* CreditsScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +166,7 @@
 				F3C4136A20B55C31003BE00B /* Obstacles.swift in Sources */,
 				D36851411DEE87A900F407C5 /* AppDelegate.swift in Sources */,
 				F3C4137520B5D7C7003BE00B /* EndScene.swift in Sources */,
+				F3C4137B20B6EC05003BE00B /* CreditsScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

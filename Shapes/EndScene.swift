@@ -12,12 +12,14 @@ class EndScene: SKScene {
   
   var playButton: SKSpriteNode?
   var score: SKLabelNode?
+  var credits: SKLabelNode?
   
   //let playButtonTex = SKTexture(imageNamed: "play")
   
   override func didMove(to view: SKView) {
     
     playButton = self.childNode(withName: "playNode") as? SKSpriteNode
+    credits = self.childNode(withName: "credits") as? SKLabelNode
     score = self.childNode(withName: "score") as? SKLabelNode
     score?.text = String(UserDefaults.standard.integer(forKey: "highScore"))
     score?.fontName = "Chalkboard SE"
@@ -41,7 +43,18 @@ class EndScene: SKScene {
           
           self.view?.presentScene(scene, transition: transition)
         }
+      } else if node == credits {
+        if view != nil {
+          let transition:SKTransition = SKTransition.fade(withDuration: 1)
+          let scene:SKScene = CreditsScene(fileNamed: "CreditsScene")!
+          
+          scene.scaleMode = .aspectFill
+          self.view?.presentScene(scene)
+          
+          self.view?.presentScene(scene, transition: transition)
+        }
       }
+      
     }
   }
 }

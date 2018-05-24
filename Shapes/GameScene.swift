@@ -108,7 +108,7 @@ class GameScene: SKScene {
     ledgeBody.collisionBitMask = 8
     ledge.physicsBody = ledgeBody
     addChild(ledge)
-    physicsWorld.gravity.dy = -17
+    physicsWorld.gravity.dy = -22
   }
   
   func changeColor(point: CGPoint) {
