@@ -12,14 +12,19 @@ import SpriteKit
 
 class highScoreScene: SKScene {
   
+  var party: SKEmitterNode?
+  
   override func didMove(to view: SKView) {
+    party = SKEmitterNode(fileNamed: "PartyAnimation.sks")
+    party?.position = CGPoint(x: 0, y:-200)
+    self.addChild(party!)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
   let scene = MenuScene(fileNamed: "MenuScene")
   let transition:SKTransition = SKTransition.fade(withDuration: 1)
   scene?.scaleMode = .aspectFill
-  
+  party?.removeFromParent()
   self.view?.presentScene(scene)
   
   self.view?.presentScene(scene!, transition: transition)

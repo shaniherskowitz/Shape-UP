@@ -45,6 +45,7 @@ class GameScene: SKScene {
   let obstacleSpacing: CGFloat = 900
   let cameraNode = SKCameraNode()
   let scoreLabel = SKLabelNode()
+  let hsButton = SKSpriteNode()
   var addObstacles: Obstacles?
   var score = 0
   var stopped = false
@@ -67,7 +68,6 @@ class GameScene: SKScene {
   }
   
   func setUpHighScore() {
-    let hsButton = SKSpriteNode()
     let hsLabel = SKLabelNode()
     hsButton.position = CGPoint(x: 450, y: 850)
     hsButton.size = CGSize(width: 150, height: 150)
@@ -82,28 +82,31 @@ class GameScene: SKScene {
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-     player.physicsBody?.velocity.dy = 1000.0
-    /*if let touch = touches.first {
+    player.physicsBody?.velocity.dy = 1000.0
+    if let touch = touches.first {
       let pos = touch.location(in: self)
       let node = self.atPoint(pos)
       
-      if node == pauseButton {
-        if(!stopped) {
-          
-          self.pauseButton.texture = SKTexture(imageNamed: "play")
-          self.stopped = true
-          print("pause")
-          self.view?.isPaused = true
-          
-
-        } else {
-          pauseButton.texture = SKTexture(imageNamed: "pause")
-          stopped = false
-          
-          self.view?.isPaused = false
-        }
-      } else { player.physicsBody?.velocity.dy = 1000.0 }
-    }*/
+      if node == hsButton {
+//        highScore = 0
+//        print("updated")
+        /* if(!stopped) {
+         
+         self.pauseButton.texture = SKTexture(imageNamed: "play")
+         self.stopped = true
+         print("pause")
+         self.view?.isPaused = true
+         
+         
+         } else {
+         pauseButton.texture = SKTexture(imageNamed: "pause")
+         stopped = false
+         
+         self.view?.isPaused = false
+         }
+         } else { player.physicsBody?.velocity.dy = 1000.0 }*/
+      }
+    }
   }
   
   override func update(_ currentTime: TimeInterval) {
