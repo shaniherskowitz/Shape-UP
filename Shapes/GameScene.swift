@@ -29,6 +29,7 @@ struct PhysicsCategory {
   static let Edge: UInt32 = 4
   static let Color: UInt32 = 5
 }
+
 var highScore: Int {
   get {
     return UserDefaults.standard.integer(forKey: "highScore")
@@ -46,6 +47,7 @@ class GameScene: SKScene {
   let scoreLabel = SKLabelNode()
   var addObstacles: Obstacles?
   var score = 0
+  var stopped = false
   
   override func didMove(to view: SKView) {
     addObstacles = Obstacles(colors: self.colors, width: size.width, space: obstacleSpacing)
@@ -54,9 +56,9 @@ class GameScene: SKScene {
     physicsWorld.contactDelegate = self
     addChild(cameraNode)
     camera = cameraNode
+    setUpHighScore()
     cameraNode.position = CGPoint(x: size.width/2, y: size.height/2)
-    
-    scoreLabel.position = CGPoint(x: -450, y: 850)
+    scoreLabel.position = CGPoint(x: -450, y: 810)
     scoreLabel.fontColor = .white
     scoreLabel.fontSize = 200
     scoreLabel.text = String(score)
@@ -64,8 +66,44 @@ class GameScene: SKScene {
     cameraNode.addChild(scoreLabel)
   }
   
+  func setUpHighScore() {
+    let hsButton = SKSpriteNode()
+    let hsLabel = SKLabelNode()
+    hsButton.position = CGPoint(x: 450, y: 850)
+    hsButton.size = CGSize(width: 150, height: 150)
+    hsButton.texture = SKTexture(imageNamed: "High Score")
+    cameraNode.addChild(hsButton)
+    
+    hsLabel.position = CGPoint(x: 450, y: 940)
+    hsLabel.text = String(highScore)
+    hsLabel.fontName = "Chalkboard SE"
+    hsLabel.fontSize = 70
+    cameraNode.addChild(hsLabel)
+  }
+  
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    player.physicsBody?.velocity.dy = 1000.0
+     player.physicsBody?.velocity.dy = 1000.0
+    /*if let touch = touches.first {
+      let pos = touch.location(in: self)
+      let node = self.atPoint(pos)
+      
+      if node == pauseButton {
+        if(!stopped) {
+          
+          self.pauseButton.texture = SKTexture(imageNamed: "play")
+          self.stopped = true
+          print("pause")
+          self.view?.isPaused = true
+          
+
+        } else {
+          pauseButton.texture = SKTexture(imageNamed: "pause")
+          stopped = false
+          
+          self.view?.isPaused = false
+        }
+      } else { player.physicsBody?.velocity.dy = 1000.0 }
+    }*/
   }
   
   override func update(_ currentTime: TimeInterval) {
@@ -151,9 +189,7 @@ class GameScene: SKScene {
     }
     addObstacles?.obstacles.removeAll()
     var scene:SKScene?
-//    setupPlayerAndObstacles()
-//    score = 0
-//    scoreLabel.text = String(score)
+    
     if( score > highScore) {
       highScore = score
       scene = highScoreScene(fileNamed: "highScoreScene")
@@ -162,7 +198,7 @@ class GameScene: SKScene {
       scene = LoserScene(fileNamed: "LoserScene")
       
     }
-    let transition:SKTransition = SKTransition.fade(withDuration: 1)
+    let transition:SKTransition = SKTransition.doorsCloseVertical(withDuration: 1)
     
     
     self.view?.showsFPS = false
@@ -177,10 +213,9 @@ class GameScene: SKScene {
     myS?.text = String(score)
     myS?.fontName = "Chalkboard SE"
     
-    self.view?.presentScene(scene)
-    
     self.view?.presentScene(scene!, transition: transition)
-
+    
+    
   }
   
 }
