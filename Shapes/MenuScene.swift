@@ -39,17 +39,14 @@ class MenuScene: SKScene {
           self.view?.showsNodeCount = false
           self.view?.ignoresSiblingOrder = true
           scene.scaleMode = .aspectFill
-          self.view?.presentScene(scene)
-          
           self.view?.presentScene(scene, transition: transition)
         }
       } else if node == settings {
         if view != nil {
-          let transition:SKTransition = SKTransition.fade(withDuration: 1)
+          let transition:SKTransition = SKTransition.doorway(withDuration: 1)
           let scene:SKScene = SettingsScene(fileNamed: "SettingsScene")!
           
           scene.scaleMode = .aspectFill
-          self.view?.presentScene(scene)
           
           self.view?.presentScene(scene, transition: transition)
         }

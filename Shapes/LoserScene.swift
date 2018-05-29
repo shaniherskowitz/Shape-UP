@@ -20,11 +20,8 @@ class LoserScene: SKScene {
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     let scene = MenuScene(fileNamed: "MenuScene")
-    let transition:SKTransition = SKTransition.fade(withDuration: 1)
+    let transition:SKTransition = SKTransition.doorway(withDuration: 1)
     scene?.scaleMode = .aspectFill
-    
-    self.view?.presentScene(scene)
-    
     self.view?.presentScene(scene!, transition: transition)
   }
   

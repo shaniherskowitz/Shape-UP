@@ -33,19 +33,20 @@ class SettingsScene: SKScene {
       if node == sound {
         if (soundOn) {
           sound?.texture = SKTexture(imageNamed: "sound off");
-          sound?.size = CGSize(width: 256, height: 256);
+          sound?.size = CGSize(width: 231, height: 231);
+          sound?.position = CGPoint(x: (sound?.position.x)! - 12, y: (sound?.position.y)! - 2)
         } else {
           sound?.texture = SKTexture(imageNamed: "sound on");
+          sound?.size = CGSize(width: 256, height: 256);
+          sound?.position = CGPoint(x: (sound?.position.x)! + 12, y: (sound?.position.y)! + 2)
         }
         soundOn = !soundOn
       } else if node == credits {
         if view != nil {
-          let transition:SKTransition = SKTransition.fade(withDuration: 1)
+          let transition:SKTransition = SKTransition.doorway(withDuration: 1)
           let scene:SKScene = CreditsScene(fileNamed: "CreditsScene")!
           
           scene.scaleMode = .aspectFill
-          self.view?.presentScene(scene)
-          
           self.view?.presentScene(scene, transition: transition)
         }
       } else if node == backButton {
@@ -53,7 +54,6 @@ class SettingsScene: SKScene {
           let transition:SKTransition = SKTransition.fade(withDuration: 1)
           let scene:SKScene = MenuScene(fileNamed: "MenuScene")!
           scene.scaleMode = .aspectFill
-          self.view?.presentScene(scene)
           
           self.view?.presentScene(scene, transition: transition)
         }
