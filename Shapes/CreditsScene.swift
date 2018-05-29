@@ -3,7 +3,7 @@
 //  Shape Up
 //
 //  Created by shani herskowitz on 5/24/18.
-//  Copyright © 2018 Ray Wenderlich. All rights reserved.
+//  Copyright © 2018 Shani Herskowitz. All rights reserved.
 //
 
 
@@ -27,7 +27,7 @@ class CreditsScene: SKScene {
       if node == backButton {
         if view != nil {
           let transition:SKTransition = SKTransition.fade(withDuration: 1)
-          let scene:SKScene = MenuScene(fileNamed: "MenuScene")!
+          let scene:SKScene = SettingsScene(fileNamed: "SettingsScene")!
           scene.scaleMode = .aspectFill
           self.view?.presentScene(scene)
           

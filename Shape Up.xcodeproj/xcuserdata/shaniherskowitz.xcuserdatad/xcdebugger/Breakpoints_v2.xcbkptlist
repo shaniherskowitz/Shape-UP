@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/GameScene.swift"
-            timestampString = "548953188.655465"
+            timestampString = "549282073.1384079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "touchesBegan(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/GameScene.swift"
-            timestampString = "548953188.655865"
+            timestampString = "549282073.138845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "dieAndRestart()"
             landmarkType = "7">
          </BreakpointContent>

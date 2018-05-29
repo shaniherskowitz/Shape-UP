@@ -1,25 +1,3 @@
-/**
- * Copyright (c) 2016 Razeware LLC
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
 import SpriteKit
 import GameplayKit
 
@@ -42,7 +20,7 @@ class GameScene: SKScene {
   
   let colors = [#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),  #colorLiteral(red: 0.8823529412, green: 0.4196078431, blue: 0.3529411765, alpha: 1),  #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),  #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)]
   let player = SKShapeNode(circleOfRadius: 40)
-  let obstacleSpacing: CGFloat = 900
+  let obstacleSpacing: CGFloat = 1000
   let cameraNode = SKCameraNode()
   let scoreLabel = SKLabelNode()
   let hsButton = SKSpriteNode()
@@ -88,8 +66,8 @@ class GameScene: SKScene {
       let node = self.atPoint(pos)
       
       if node == hsButton {
-//        highScore = 0
-//        print("updated")
+//         highScore = 0
+//         print("updated")
         /* if(!stopped) {
          
          self.pauseButton.texture = SKTexture(imageNamed: "play")
@@ -232,7 +210,8 @@ extension GameScene: SKPhysicsContactDelegate {
   func didBegin(_ contact: SKPhysicsContact) {
     
     if let nodeA = contact.bodyA.node as? SKShapeNode, let nodeB = contact.bodyB.node as? SKShapeNode {
-      if nodeA.fillColor != nodeB.fillColor {
+      
+      if nodeA.parent != nil && nodeA.fillColor != nodeB.fillColor {
         dieAndRestart()
       }
     }

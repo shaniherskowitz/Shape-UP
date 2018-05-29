@@ -3,7 +3,7 @@
 //  Shapes
 //
 //  Created by shani herskowitz on 5/23/18.
-//  Copyright © 2018 Ray Wenderlich. All rights reserved.
+//  Copyright © 2018 shani herskowitz. All rights reserved.
 //
 
 import SpriteKit
@@ -12,14 +12,14 @@ class MenuScene: SKScene {
   
   var playButton: SKSpriteNode?
   var score: SKLabelNode?
-  var credits: SKLabelNode?
+  var settings: SKSpriteNode?
   
   //let playButtonTex = SKTexture(imageNamed: "play")
   
   override func didMove(to view: SKView) {
     
     playButton = self.childNode(withName: "playNode") as? SKSpriteNode
-    credits = self.childNode(withName: "credits") as? SKLabelNode
+    settings = self.childNode(withName: "settings") as? SKSpriteNode
     score = self.childNode(withName: "score") as? SKLabelNode
     score?.text = String(UserDefaults.standard.integer(forKey: "highScore"))
     score?.fontName = "Chalkboard SE"
@@ -43,10 +43,10 @@ class MenuScene: SKScene {
           
           self.view?.presentScene(scene, transition: transition)
         }
-      } else if node == credits {
+      } else if node == settings {
         if view != nil {
           let transition:SKTransition = SKTransition.fade(withDuration: 1)
-          let scene:SKScene = CreditsScene(fileNamed: "CreditsScene")!
+          let scene:SKScene = SettingsScene(fileNamed: "SettingsScene")!
           
           scene.scaleMode = .aspectFill
           self.view?.presentScene(scene)
