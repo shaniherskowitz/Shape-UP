@@ -101,17 +101,17 @@ class SettingsScene: SKScene {
       case snail:
         if soundOn {run(clickSound)}
         circlePlace = -354.211
-        circle?.position = CGPoint(x: -354.211, y: -607.433)
+        circle?.position = CGPoint(x: -354.211, y: -738.407)
         
       case rabbit:
         if soundOn {run(clickSound)}
         circlePlace = -2.276
-        circle?.position = CGPoint(x: -2.276, y: -607.433)
+        circle?.position = CGPoint(x: -2.276, y: -738.407)
         
       case cheetta:
         if soundOn {run(clickSound)}
         circlePlace = 336.743
-        circle?.position = CGPoint(x: 336.743, y: -607.433)
+        circle?.position = CGPoint(x: 336.743, y: -738.407)
         
       default: print("no button")
       

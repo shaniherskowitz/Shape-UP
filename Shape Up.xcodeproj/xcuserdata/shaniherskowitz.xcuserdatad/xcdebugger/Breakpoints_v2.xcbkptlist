@@ -24,7 +24,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/GameScene.swift"
-            timestampString = "549448865.913289"
+            timestampString = "549452971.078607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
@@ -40,7 +40,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/GameScene.swift"
-            timestampString = "549448865.913386"
+            timestampString = "549452971.078721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "183"
@@ -56,13 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/SettingsScene.swift"
-            timestampString = "549448865.9134721"
+            timestampString = "549452971.078813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "SettingsScene"
-            landmarkType = "3">
+            endingLineNumber = "122">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
