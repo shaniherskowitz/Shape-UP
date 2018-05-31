@@ -15,11 +15,28 @@ class Obstacles {
   var obstacles: [SKNode] = []
   let obstacleSpacing: CGFloat
   var width: CGFloat = 0
+  var s = 0.0
+  enum Speed: Float {
+    case snail = -354.211
+    case rabbit = -2.276
+    case cheetta =  336.743
+  }
   
   init(colors: [UIColor], width: CGFloat, space: CGFloat) {
     self.colors = colors
     self.width = width
     self.obstacleSpacing = space
+    
+    setSpeed()
+  }
+  
+  func setSpeed() {
+    switch circlePlace {
+    case Speed.snail.rawValue: s = 5
+    case Speed.rabbit.rawValue: s = 4
+    case Speed.cheetta.rawValue: s = 3
+    default: print("problem with speed")
+    }
   }
   
   
@@ -63,11 +80,10 @@ class Obstacles {
     obs.position = CGPoint(x: width/2, y: (obstacleSpacing) * CGFloat(obstacles.count))
     let rotate = SKAction.rotate(byAngle:1.0 * CGFloat(Double.pi / 4), duration: 0.0)
     obs.run(rotate)
-    
-  
-    let rotateAction = SKAction.rotate(byAngle: 2.0 * CGFloat(Double.pi), duration: 5.0)
+
+    let rotateAction = SKAction.rotate(byAngle: 2.0 * CGFloat(Double.pi), duration: Double(s))
     obs.children[0].run(SKAction.repeatForever(rotateAction))
-    let rotateAction2 = SKAction.rotate(byAngle: 2.0 * -CGFloat(Double.pi), duration: 5.0)
+    let rotateAction2 = SKAction.rotate(byAngle: 2.0 * -CGFloat(Double.pi), duration:  Double(s))
     obs.children[1].run(SKAction.repeatForever(rotateAction2))
     
     return obs
@@ -115,8 +131,8 @@ class Obstacles {
     obstacles.append(obstacle)
     obstacle.position = CGPoint(x: width/2, y: (obstacleSpacing) * CGFloat(obstacles.count))
     
-    let choice = Int(arc4random_uniform(3))
-    let rotateAction = SKAction.rotate(byAngle: 2.0 * CGFloat(Double.pi), duration: 6.0 - Double(choice))
+    let choice = Int(arc4random_uniform(2))
+    let rotateAction = SKAction.rotate(byAngle: 2.0 * CGFloat(Double.pi), duration: s - Double(choice))
     obstacle.run(SKAction.repeatForever(rotateAction))
     
     return obstacle
@@ -134,8 +150,8 @@ class Obstacles {
     obstacles.append(obstacle)
     obstacle.position = CGPoint(x: width/2, y: obstacleSpacing * CGFloat(obstacles.count))
     
-    let choice = Int(arc4random_uniform(3))
-    let rotateAction = SKAction.rotate(byAngle: -2.0 * CGFloat(Double.pi), duration: 5.0 - Double(choice))
+    let choice = Int(arc4random_uniform(1))
+    let rotateAction = SKAction.rotate(byAngle: -2.0 * CGFloat(Double.pi), duration: s - Double(choice))
     obstacle.run(SKAction.repeatForever(rotateAction))
     
     return obstacle
@@ -157,8 +173,8 @@ class Obstacles {
     if side == 1 {k = -1}
     obstacle.position = CGPoint(x: width/2 + 200 * CGFloat(k), y: obstacleSpacing * CGFloat(obstacles.count))
     
-    let choice = Int(arc4random_uniform(3))
-    let rotateAction = SKAction.rotate(byAngle: -2.0 * CGFloat(Double(k) * Double.pi), duration: 5.0 - Double(choice))
+    let choice = Int(arc4random_uniform(1))
+    let rotateAction = SKAction.rotate(byAngle: -2.0 * CGFloat(Double(k) * Double.pi), duration: s - Double(choice))
     obstacle.run(SKAction.repeatForever(rotateAction))
     
     return obstacle
@@ -181,8 +197,8 @@ class Obstacles {
     obstacle.position = CGPoint(x: width/2 - 250, y: obstacleSpacing * CGFloat(obstacles.count))
     obstacle2.position = CGPoint(x: width/2 + 250, y: obstacleSpacing * CGFloat(obstacles.count))
     
-    let choice = Int(arc4random_uniform(3))
-    let rotateAction = SKAction.rotate(byAngle: 2.0 * CGFloat(-Double.pi), duration: 5.0 - Double(choice))
+    let choice = Int(arc4random_uniform(1))
+    let rotateAction = SKAction.rotate(byAngle: 2.0 * CGFloat(-Double.pi), duration: s + Double(choice))
     obstacle.run(SKAction.repeatForever(rotateAction))
     let rotateAction2 = SKAction.rotate(byAngle: 2.0 * CGFloat(Double.pi), duration: rotateAction.duration)
     obstacle2.run(SKAction.repeatForever(rotateAction2))

@@ -16,6 +16,8 @@ var highScore: Int {
     UserDefaults.standard.set(newValue, forKey: "highScore")
   }
 }
+
+
 class GameScene: SKScene {
   
   let colors = [#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1),  #colorLiteral(red: 0.8823529412, green: 0.4196078431, blue: 0.3529411765, alpha: 1),  #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1),  #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)]
@@ -27,6 +29,8 @@ class GameScene: SKScene {
   var addObstacles: Obstacles?
   var score = 0
   var stopped = false
+  let pointSound = SKAction.playSoundFileNamed("point4", waitForCompletion: false)
+  
   
   override func didMove(to view: SKView) {
     addObstacles = Obstacles(colors: self.colors, width: size.width, space: obstacleSpacing)
@@ -43,7 +47,11 @@ class GameScene: SKScene {
     scoreLabel.text = String(score)
     scoreLabel.fontName = "Chalkboard SE"
     cameraNode.addChild(scoreLabel)
+    
+   
+    
   }
+  
   
   func setUpHighScore() {
     let hsLabel = SKLabelNode()
@@ -66,8 +74,8 @@ class GameScene: SKScene {
       let node = self.atPoint(pos)
       
       if node == hsButton {
-//         highScore = 0
-//         print("updated")
+        //         highScore = 0
+        //         print("updated")
         /* if(!stopped) {
          
          self.pauseButton.texture = SKTexture(imageNamed: "play")
@@ -91,6 +99,7 @@ class GameScene: SKScene {
     if player.position.y > obstacleSpacing * CGFloat((addObstacles?.obstacles.count)! - 2) {
       print("score")
       score += 1
+      if(soundOn) {run(pointSound)}
       scoreLabel.text = String(score)
       scoreLabel.fontName = "Chalkboard SE"
       addChild((addObstacles?.addObstacle())!)
@@ -179,6 +188,7 @@ class GameScene: SKScene {
       scene = LoserScene(fileNamed: "LoserScene")
       
     }
+    
     let transition:SKTransition = SKTransition.doorsCloseVertical(withDuration: 1)
     
     

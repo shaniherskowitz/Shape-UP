@@ -14,6 +14,15 @@
 		D368514E1DEE87A900F407C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D368514D1DEE87A900F407C5 /* Assets.xcassets */; };
 		D36851511DEE87A900F407C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D368514F1DEE87A900F407C5 /* LaunchScreen.storyboard */; };
 		F323AC7A20BDD31F0057E85F /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F323AC7920BDD31F0057E85F /* SettingsScene.swift */; };
+		F323AC8020BEC4C70057E85F /* highscore.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F323AC7F20BEC4C70057E85F /* highscore.mp3 */; };
+		F323AC8220BEC4F30057E85F /* gameover.wav in Resources */ = {isa = PBXBuildFile; fileRef = F323AC8120BEC4F30057E85F /* gameover.wav */; };
+		F323AC8420BEC4FB0057E85F /* fall.wav in Resources */ = {isa = PBXBuildFile; fileRef = F323AC8320BEC4FB0057E85F /* fall.wav */; };
+		F323AC8620BEC5020057E85F /* point.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F323AC8520BEC5010057E85F /* point.mp3 */; };
+		F323AC8A20BEC50E0057E85F /* point2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F323AC8920BEC50E0057E85F /* point2.mp3 */; };
+		F323AC8C20BED3C30057E85F /* point3.wav in Resources */ = {isa = PBXBuildFile; fileRef = F323AC8B20BED3C20057E85F /* point3.wav */; };
+		F323AC8E20BED7D30057E85F /* gameover2.wav in Resources */ = {isa = PBXBuildFile; fileRef = F323AC8D20BED7D20057E85F /* gameover2.wav */; };
+		F323AC9220BEDA1E0057E85F /* point4.wav in Resources */ = {isa = PBXBuildFile; fileRef = F323AC9120BEDA1E0057E85F /* point4.wav */; };
+		F323AC9420BFE2A90057E85F /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = F323AC9320BFE2A80057E85F /* click.wav */; };
 		F34C6CC220BD56CC0089644C /* SettingsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F34C6CC120BD56CC0089644C /* SettingsScene.sks */; };
 		F3C4136A20B55C31003BE00B /* Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4136920B55C31003BE00B /* Obstacles.swift */; };
 		F3C4137520B5D7C7003BE00B /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4137420B5D7C7003BE00B /* MenuScene.swift */; };
@@ -39,6 +48,16 @@
 		D36851501DEE87A900F407C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D36851521DEE87A900F407C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F323AC7920BDD31F0057E85F /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
+		F323AC7E20BEC4870057E85F /* fail-accoustic-guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fail-accoustic-guitar.wav"; sourceTree = "<group>"; };
+		F323AC7F20BEC4C70057E85F /* highscore.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = highscore.mp3; path = ../../../../../Downloads/highscore.mp3; sourceTree = "<group>"; };
+		F323AC8120BEC4F30057E85F /* gameover.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gameover.wav; path = ../../../../../Downloads/gameover.wav; sourceTree = "<group>"; };
+		F323AC8320BEC4FB0057E85F /* fall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = fall.wav; path = ../../../../../Downloads/fall.wav; sourceTree = "<group>"; };
+		F323AC8520BEC5010057E85F /* point.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = point.mp3; path = ../../../../../Downloads/point.mp3; sourceTree = "<group>"; };
+		F323AC8920BEC50E0057E85F /* point2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = point2.mp3; path = ../../../../../Downloads/point2.mp3; sourceTree = "<group>"; };
+		F323AC8B20BED3C20057E85F /* point3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = point3.wav; path = ../../../../../Downloads/point3.wav; sourceTree = "<group>"; };
+		F323AC8D20BED7D20057E85F /* gameover2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = gameover2.wav; path = ../../../../../Downloads/gameover2.wav; sourceTree = "<group>"; };
+		F323AC9120BEDA1E0057E85F /* point4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = point4.wav; path = ../../../../../Downloads/point4.wav; sourceTree = "<group>"; };
+		F323AC9320BFE2A80057E85F /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click.wav; path = ../../../../../Downloads/click.wav; sourceTree = "<group>"; };
 		F34C6CC120BD56CC0089644C /* SettingsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsScene.sks; sourceTree = "<group>"; };
 		F3C4136920B55C31003BE00B /* Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacles.swift; sourceTree = "<group>"; };
 		F3C4137420B5D7C7003BE00B /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
@@ -87,6 +106,7 @@
 		D368513F1DEE87A900F407C5 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				F323AC7B20BEC4120057E85F /* sounds */,
 				F3C4138820B84D17003BE00B /* animation */,
 				F3C4137820B6EAF0003BE00B /* CreditsScene.sks */,
 				F34C6CC120BD56CC0089644C /* SettingsScene.sks */,
@@ -108,6 +128,23 @@
 				D36851521DEE87A900F407C5 /* Info.plist */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		F323AC7B20BEC4120057E85F /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F323AC9120BEDA1E0057E85F /* point4.wav */,
+				F323AC8D20BED7D20057E85F /* gameover2.wav */,
+				F323AC9320BFE2A80057E85F /* click.wav */,
+				F323AC8B20BED3C20057E85F /* point3.wav */,
+				F323AC8520BEC5010057E85F /* point.mp3 */,
+				F323AC8920BEC50E0057E85F /* point2.mp3 */,
+				F323AC8320BEC4FB0057E85F /* fall.wav */,
+				F323AC8120BEC4F30057E85F /* gameover.wav */,
+				F323AC7F20BEC4C70057E85F /* highscore.mp3 */,
+				F323AC7E20BEC4870057E85F /* fail-accoustic-guitar.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 		F3C4138820B84D17003BE00B /* animation */ = {
@@ -181,15 +218,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F323AC8420BEC4FB0057E85F /* fall.wav in Resources */,
+				F323AC8C20BED3C30057E85F /* point3.wav in Resources */,
+				F323AC8A20BEC50E0057E85F /* point2.mp3 in Resources */,
 				F3C4137F20B70FEB003BE00B /* highScoreScene.sks in Resources */,
 				F3C4138B20B84D59003BE00B /* PartyAnimation.sks in Resources */,
+				F323AC8620BEC5020057E85F /* point.mp3 in Resources */,
 				F3C4137720B5DE95003BE00B /* MenuScene.sks in Resources */,
+				F323AC8220BEC4F30057E85F /* gameover.wav in Resources */,
+				F323AC8E20BED7D30057E85F /* gameover2.wav in Resources */,
 				D368514C1DEE87A900F407C5 /* Main.storyboard in Resources */,
 				D368514E1DEE87A900F407C5 /* Assets.xcassets in Resources */,
+				F323AC9220BEDA1E0057E85F /* point4.wav in Resources */,
 				F3C4138E20B8571A003BE00B /* magic.sks in Resources */,
 				D36851511DEE87A900F407C5 /* LaunchScreen.storyboard in Resources */,
 				F3C4138720B71BF4003BE00B /* LoserScene.sks in Resources */,
 				F3C4138C20B84D59003BE00B /* Assets.xcassets in Resources */,
+				F323AC9420BFE2A90057E85F /* click.wav in Resources */,
+				F323AC8020BEC4C70057E85F /* highscore.mp3 in Resources */,
 				F34C6CC220BD56CC0089644C /* SettingsScene.sks in Resources */,
 				F3C4137920B6EAF0003BE00B /* CreditsScene.sks in Resources */,
 			);

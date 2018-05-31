@@ -26,6 +26,7 @@ var circlePlace: Float {
   }
 }
 
+
 class SettingsScene: SKScene {
   
   var sound: SKSpriteNode?
@@ -35,6 +36,7 @@ class SettingsScene: SKScene {
   var snail: SKSpriteNode?
   var cheetta: SKSpriteNode?
   var circle: SKSpriteNode?
+  let clickSound = SKAction.playSoundFileNamed("click", waitForCompletion: false)
   
   
   override func didMove(to view: SKView) {
@@ -72,11 +74,13 @@ class SettingsScene: SKScene {
       
       switch node {
       case sound:
+        if !soundOn {run(clickSound)}
         setSound(start: false)
         soundOn = !soundOn
         
       case credits:
         if view != nil {
+          if soundOn {run(clickSound)}
           let transition:SKTransition = SKTransition.doorway(withDuration: 1)
           let scene:SKScene = CreditsScene(fileNamed: "CreditsScene")!
           
@@ -86,6 +90,7 @@ class SettingsScene: SKScene {
         
       case backButton:
         if view != nil {
+          if soundOn {run(clickSound)}
           let transition:SKTransition = SKTransition.fade(withDuration: 1)
           let scene:SKScene = MenuScene(fileNamed: "MenuScene")!
           scene.scaleMode = .aspectFill
@@ -94,14 +99,17 @@ class SettingsScene: SKScene {
         }
         
       case snail:
+        if soundOn {run(clickSound)}
         circlePlace = -354.211
         circle?.position = CGPoint(x: -354.211, y: -607.433)
         
       case rabbit:
+        if soundOn {run(clickSound)}
         circlePlace = -2.276
         circle?.position = CGPoint(x: -2.276, y: -607.433)
         
       case cheetta:
+        if soundOn {run(clickSound)}
         circlePlace = 336.743
         circle?.position = CGPoint(x: 336.743, y: -607.433)
         

@@ -12,6 +12,7 @@ import SpriteKit
 class CreditsScene: SKScene {
   
   var backButton: SKSpriteNode?
+  let clickSound = SKAction.playSoundFileNamed("click", waitForCompletion: false)
   
   override func didMove(to view: SKView) {
     backButton = self.childNode(withName: "back") as? SKSpriteNode
@@ -26,6 +27,7 @@ class CreditsScene: SKScene {
       
       if node == backButton {
         if view != nil {
+          if soundOn {run(clickSound)}
           let transition:SKTransition = SKTransition.fade(withDuration: 1)
           let scene:SKScene = SettingsScene(fileNamed: "SettingsScene")!
           scene.scaleMode = .aspectFill 

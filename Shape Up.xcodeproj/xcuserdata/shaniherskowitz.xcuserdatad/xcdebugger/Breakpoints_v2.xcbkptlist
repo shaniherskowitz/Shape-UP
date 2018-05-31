@@ -24,12 +24,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/GameScene.swift"
-            timestampString = "549311365.950718"
+            timestampString = "549448865.913289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "touchesBegan(_:with:)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "setUpHighScore()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/GameScene.swift"
-            timestampString = "549311365.951197"
+            timestampString = "549448865.913386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "dieAndRestart()"
             landmarkType = "7">
          </BreakpointContent>
@@ -56,11 +56,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Shapes/SettingsScene.swift"
-            timestampString = "549372014.2489589"
+            timestampString = "549448865.9134721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114">
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "SettingsScene"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
