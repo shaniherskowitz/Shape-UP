@@ -7,7 +7,7 @@
 //
 
 import SpriteKit
-
+import MediaPlayer
 
 var soundOn: Bool {
   get {
@@ -36,8 +36,9 @@ class SettingsScene: SKScene {
   var snail: SKSpriteNode?
   var cheetta: SKSpriteNode?
   var circle: SKSpriteNode?
+  var howto: SKLabelNode?
   let clickSound = SKAction.playSoundFileNamed("click", waitForCompletion: false)
-  
+  var playerLayer: AVPlayerLayer?
   
   override func didMove(to view: SKView) {
     UserDefaults.standard.register(defaults: ["soundOn" : true])
@@ -48,6 +49,7 @@ class SettingsScene: SKScene {
     snail = self.childNode(withName: "snail") as? SKSpriteNode
     rabbit = self.childNode(withName: "rabbit") as? SKSpriteNode
     cheetta = self.childNode(withName: "cheetta") as? SKSpriteNode
+    howto = self.childNode(withName: "howto") as? SKLabelNode
     if(circlePlace == 0.0) {
       circlePlace = Float((circle?.position.x)!)
     } else {circle?.position.x = CGFloat(circlePlace)}
@@ -97,6 +99,9 @@ class SettingsScene: SKScene {
           
           self.view?.presentScene(scene, transition: transition)
         }
+      case howto:
+        if soundOn {run(clickSound)}
+        playVideo(from: "shapeup.mov")
         
       case snail:
         if soundOn {run(clickSound)}
@@ -118,4 +123,29 @@ class SettingsScene: SKScene {
     }
     }
   }
+  
+  private func playVideo(from file:String) {
+    let file = file.components(separatedBy: ".")
+    
+    guard let path = Bundle.main.path(forResource: file[0], ofType:file[1]) else {
+      debugPrint( "\(file.joined(separator: ".")) not found")
+      return
+    }
+    let player = AVPlayer(url: URL(fileURLWithPath: path))
+    if soundOn {player.isMuted = true}
+    playerLayer = AVPlayerLayer(player: player)
+    playerLayer?.frame = (self.view?.bounds)!
+    self.view?.layer.addSublayer(playerLayer!)
+    player.play()
+    
+    NotificationCenter.default.addObserver(self, selector:#selector(self.playerDidFinishPlaying(note:)),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+    
+  
+  }
+  @objc func playerDidFinishPlaying(note: NSNotification){
+    print("Video Finished")
+ 
+    playerLayer?.removeFromSuperlayer()
+  }
+
 }
