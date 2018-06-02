@@ -39,6 +39,8 @@ class SettingsScene: SKScene {
   var howto: SKLabelNode?
   let clickSound = SKAction.playSoundFileNamed("click", waitForCompletion: false)
   var playerLayer: AVPlayerLayer?
+  var player: AVPlayer?
+  
   
   override func didMove(to view: SKView) {
     UserDefaults.standard.register(defaults: ["soundOn" : true])
@@ -131,21 +133,30 @@ class SettingsScene: SKScene {
       debugPrint( "\(file.joined(separator: ".")) not found")
       return
     }
-    let player = AVPlayer(url: URL(fileURLWithPath: path))
-    if soundOn {player.isMuted = true}
+    player = AVPlayer(url: URL(fileURLWithPath: path))
+    if !soundOn {player?.isMuted = true}
     playerLayer = AVPlayerLayer(player: player)
     playerLayer?.frame = (self.view?.bounds)!
     self.view?.layer.addSublayer(playerLayer!)
-    player.play()
+    player?.play()
     
-    NotificationCenter.default.addObserver(self, selector:#selector(self.playerDidFinishPlaying(note:)),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
-    
+    NotificationCenter.default.addObserver(self, selector:#selector(self.playerDidFinishPlaying(note:)),name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
+    NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
   
   }
   @objc func playerDidFinishPlaying(note: NSNotification){
     print("Video Finished")
- 
     playerLayer?.removeFromSuperlayer()
+  }
+  //App enter in forground.
+  @objc func applicationWillEnterForeground(_ notification: Notification) {
+    player?.play()
+  }
+  
+  //App enter in forground.
+  @objc func applicationDidEnterBackground(_ notification: Notification) {
+    player?.pause()
   }
 
 }

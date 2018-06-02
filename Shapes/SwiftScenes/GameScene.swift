@@ -1,6 +1,6 @@
 import SpriteKit
 import GameplayKit
-
+import GameKit
 struct PhysicsCategory {
   static let Player: UInt32 = 1
   static let Obstacle: UInt32 = 2
@@ -30,8 +30,7 @@ class GameScene: SKScene {
   var score = 0
   var stopped = false
   let pointSound = SKAction.playSoundFileNamed("point4", waitForCompletion: false)
-  
-  
+
   override func didMove(to view: SKView) {
     addObstacles = Obstacles(colors: self.colors, width: size.width, space: obstacleSpacing)
     self.backgroundColor = .black
@@ -47,8 +46,6 @@ class GameScene: SKScene {
     scoreLabel.text = String(score)
     scoreLabel.fontName = "Chalkboard SE"
     cameraNode.addChild(scoreLabel)
-    
-   
     
   }
   
@@ -205,9 +202,9 @@ class GameScene: SKScene {
     myS?.fontName = "Chalkboard SE"
     
     self.view?.presentScene(scene!, transition: transition)
-    
-    
   }
+  
+
   
 }
 
