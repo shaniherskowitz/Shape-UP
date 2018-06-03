@@ -6,7 +6,7 @@
 //  Copyright © 2018 shani herskowitz. All rights reserved.
 //
 
-import SpriteKit
+
 import GameKit
 
 // Global scope (I generally put these in a new file called Global.swift)

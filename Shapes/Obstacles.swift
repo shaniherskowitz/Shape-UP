@@ -35,7 +35,7 @@ class Obstacles {
     case Speed.snail.rawValue: s = 5
     case Speed.rabbit.rawValue: s = 4
     case Speed.cheetta.rawValue: s = 3
-    default: print("problem with speed")
+    default: s = 4
     }
   }
   

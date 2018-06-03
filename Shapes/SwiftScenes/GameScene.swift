@@ -1,6 +1,5 @@
 import SpriteKit
 import GameplayKit
-import GameKit
 struct PhysicsCategory {
   static let Player: UInt32 = 1
   static let Obstacle: UInt32 = 2
